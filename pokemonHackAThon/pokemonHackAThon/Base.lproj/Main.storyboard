@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="9YJ-pE-Kwx">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Segues with Peek and Pop" minToolsVersion="7.1"/>
+    </dependencies>
+    <scenes>
+        <!--Pokemon Tinder-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="pokemonHackAThon" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Pikachu" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7vA-q8-Kg2">
+                                <rect key="frame" x="262" y="101" width="61" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pvS-Me-Hnm">
+                                <rect key="frame" x="142" y="419" width="78" height="78"/>
+                                <size key="titleShadowOffset" width="2.2250738585072014e-308" height="0.0"/>
+                                <state key="normal" title="Button" image="X"/>
+                                <connections>
+                                    <action selector="pokePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4eW-R9-BJm"/>
+                                    <action selector="xButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uT8-Gf-Uh8"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xlN-Pq-ktX">
+                                <rect key="frame" x="366" y="413" width="93" height="90"/>
+                                <state key="normal" image="pokeball">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="pokePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cIU-gs-xPA"/>
+                                    <action selector="pokeballButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ouB-Fh-XNI"/>
+                                    <segue destination="N1C-Cr-1IA" kind="show" identifier="bulbSegue" id="NVx-vN-iUD">
+                                        <segue key="commit" inheritsFrom="parent" id="I5i-tG-rMu"/>
+                                        <segue key="preview" inheritsFrom="commit" id="cL2-wA-WjJ"/>
+                                    </segue>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="pika" translatesAutoresizingMaskIntoConstraints="NO" id="bDS-Jl-L4G" userLabel="Pokemon Image">
+                                <rect key="frame" x="142" y="148" width="317" height="229"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="7vA-q8-Kg2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6jg-3X-f7L"/>
+                            <constraint firstItem="bDS-Jl-L4G" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Y0J-Jn-yub"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Pokemon Tinder" id="fz5-wo-07s"/>
+                    <connections>
+                        <outlet property="pokeImage" destination="bDS-Jl-L4G" id="yUH-t9-4kn"/>
+                        <outlet property="pokemonImage" destination="bDS-Jl-L4G" id="pXX-xe-Poo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1180" y="-370"/>
+        </scene>
+        <!--Bulbasaur View Controller-->
+        <scene sceneID="Xfl-MY-e50">
+            <objects>
+                <viewController id="N1C-Cr-1IA" customClass="BulbasaurViewController" customModule="pokemonHackAThon" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="rpg-bU-C8c"/>
+                        <viewControllerLayoutGuide type="bottom" id="fUh-cv-uOS"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="PeT-8x-oqi">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Favorites" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QsP-ux-jHu">
+                                <rect key="frame" x="4" y="40" width="70" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m0G-SX-CK6">
+                                <rect key="frame" x="346" y="357" width="93" height="90"/>
+                                <state key="normal" image="pokeball">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="pokePressed:" destination="N1C-Cr-1IA" eventType="touchUpInside" id="lfg-nm-O0l"/>
+                                    <action selector="pokeballButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="95d-Wq-bqe"/>
+                                    <segue destination="nVR-Ti-Wsc" kind="show" identifier="ivySegue" id="uzy-i2-lsm"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C39-LG-Ppx">
+                                <rect key="frame" x="190" y="363" width="78" height="78"/>
+                                <size key="titleShadowOffset" width="2.2250738585072014e-308" height="0.0"/>
+                                <state key="normal" title="Button" image="X"/>
+                                <connections>
+                                    <action selector="xButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wa9-g3-koG"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Bulbasaur" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="miN-aT-N8b">
+                                <rect key="frame" x="250" y="103" width="77" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="bulbasaur" translatesAutoresizingMaskIntoConstraints="NO" id="WYD-vR-DIf">
+                                <rect key="frame" x="180" y="132" width="241" height="185"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="fUh-cv-uOS" firstAttribute="top" secondItem="C39-LG-Ppx" secondAttribute="bottom" constant="159" id="Dy7-R1-mBH"/>
+                            <constraint firstItem="C39-LG-Ppx" firstAttribute="leading" secondItem="PeT-8x-oqi" secondAttribute="leadingMargin" constant="170" id="JOa-SG-bsx"/>
+                            <constraint firstItem="miN-aT-N8b" firstAttribute="centerX" secondItem="PeT-8x-oqi" secondAttribute="centerX" id="PkX-XB-psz"/>
+                            <constraint firstItem="m0G-SX-CK6" firstAttribute="top" secondItem="WYD-vR-DIf" secondAttribute="bottom" constant="40" id="etz-BM-icQ"/>
+                            <constraint firstItem="C39-LG-Ppx" firstAttribute="baseline" secondItem="m0G-SX-CK6" secondAttribute="baseline" id="hnq-2w-0A1"/>
+                            <constraint firstItem="WYD-vR-DIf" firstAttribute="centerX" secondItem="PeT-8x-oqi" secondAttribute="centerX" id="jaj-oQ-eQD"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="backPressed" destination="C39-LG-Ppx" id="RtZ-5v-3Al"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6tH-zG-Yvy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1959" y="-362"/>
+        </scene>
+        <!--Ivy View Controller-->
+        <scene sceneID="hab-Yk-5Z6">
+            <objects>
+                <viewController id="nVR-Ti-Wsc" customClass="IvyViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="PvH-r8-jSx"/>
+                        <viewControllerLayoutGuide type="bottom" id="cey-RB-7nf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="GBQ-lX-bee">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ivysaur" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uNR-mC-BPp">
+                                <rect key="frame" x="279" y="71" width="55" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p4m-P8-ZWC">
+                                <rect key="frame" x="329" y="351" width="93" height="90"/>
+                                <state key="normal" image="pokeball">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="pokeballButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9e3-sH-pj0"/>
+                                    <segue destination="B5z-l3-rFq" kind="show" id="jMK-Us-MJX"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Naq-zl-4AZ">
+                                <rect key="frame" x="167" y="357" width="78" height="78"/>
+                                <size key="titleShadowOffset" width="2.2250738585072014e-308" height="0.0"/>
+                                <state key="normal" title="Button" image="X"/>
+                                <connections>
+                                    <action selector="xButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TCZ-cf-5VY"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="ivysaur" translatesAutoresizingMaskIntoConstraints="NO" id="2HF-0B-ZiE">
+                                <rect key="frame" x="167" y="149" width="240" height="171"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="cey-RB-7nf" firstAttribute="top" secondItem="Naq-zl-4AZ" secondAttribute="bottom" constant="165" id="BKW-ri-8pl"/>
+                            <constraint firstItem="2HF-0B-ZiE" firstAttribute="leading" secondItem="Naq-zl-4AZ" secondAttribute="trailing" constant="-78" id="Cqd-ba-9H3"/>
+                            <constraint firstItem="Naq-zl-4AZ" firstAttribute="baseline" secondItem="p4m-P8-ZWC" secondAttribute="baseline" id="D74-fL-hR1"/>
+                            <constraint firstItem="Naq-zl-4AZ" firstAttribute="leading" secondItem="GBQ-lX-bee" secondAttribute="leadingMargin" constant="147" id="pCf-fV-fv0"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ylj-hc-V0e" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2644" y="-352"/>
+        </scene>
+        <!--Venusaur View Controller-->
+        <scene sceneID="Inp-C6-XJ2">
+            <objects>
+                <viewController id="B5z-l3-rFq" customClass="VenusaurViewController" customModule="pokemonHackAThon" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bRJ-ps-oab"/>
+                        <viewControllerLayoutGuide type="bottom" id="c1w-R4-00Y"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1FI-NS-MBY">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="venusaur" translatesAutoresizingMaskIntoConstraints="NO" id="aIh-0c-dJz">
+                                <rect key="frame" x="189" y="113" width="240" height="174"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Venusaur" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xVz-Im-55w">
+                                <rect key="frame" x="264" y="41" width="72" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rcZ-zR-DI6">
+                                <rect key="frame" x="180" y="345" width="78" height="78"/>
+                                <size key="titleShadowOffset" width="2.2250738585072014e-308" height="0.0"/>
+                                <state key="normal" title="Button" image="X"/>
+                                <connections>
+                                    <action selector="xButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6tR-Un-gmr"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Venesaur" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aE1-ND-xlL">
+                                <rect key="frame" x="264" y="84" width="72" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="byB-KP-Kgl">
+                                <rect key="frame" x="327" y="333" width="93" height="90"/>
+                                <state key="normal" image="pokeball">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="pokePressed:" destination="B5z-l3-rFq" eventType="touchUpInside" id="sxM-0V-Nw6"/>
+                                    <action selector="pokeballButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="szI-j3-llc"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="c1w-R4-00Y" firstAttribute="top" secondItem="rcZ-zR-DI6" secondAttribute="bottom" constant="177" id="3wW-Kn-B1E"/>
+                            <constraint firstItem="rcZ-zR-DI6" firstAttribute="baseline" secondItem="byB-KP-Kgl" secondAttribute="baseline" id="5Ga-06-T1g"/>
+                            <constraint firstItem="aIh-0c-dJz" firstAttribute="centerX" secondItem="1FI-NS-MBY" secondAttribute="centerX" id="8Te-9d-7OK"/>
+                            <constraint firstItem="rcZ-zR-DI6" firstAttribute="top" secondItem="aIh-0c-dJz" secondAttribute="bottom" constant="19" id="Cq1-R3-Pvm"/>
+                            <constraint firstItem="rcZ-zR-DI6" firstAttribute="leading" secondItem="1FI-NS-MBY" secondAttribute="leadingMargin" constant="160" id="Geg-WQ-PiY"/>
+                            <constraint firstItem="xVz-Im-55w" firstAttribute="centerX" secondItem="1FI-NS-MBY" secondAttribute="centerX" id="WPx-sT-k4m"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ofm-Qf-tTa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3491" y="-373"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ASt-e8-K2g">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9YJ-pE-Kwx" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="7kT-U0-RQs">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="cns-9u-4Bi"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SNI-rm-8mC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="411" y="-376"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="X" width="603" height="603"/>
+        <image name="bulbasaur" width="96" height="96"/>
+        <image name="ivysaur" width="96" height="96"/>
+        <image name="pika" width="96" height="96"/>
+        <image name="pokeball" width="300" height="301"/>
+        <image name="venusaur" width="96" height="96"/>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="NVx-vN-iUD"/>
+    </inferredMetricsTieBreakers>
+</document>
